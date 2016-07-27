@@ -102,7 +102,6 @@ label, input[type="button"], input[type="submit"], input[type="image"], button, 
 button, input, select, textarea {
     margin: 0;
 }
-
 /* .checkbox, .radio {float:left; width:13px; height:13px; margin-right:6px; padding:0;} */
 
 button {
@@ -138,7 +137,6 @@ button {
     position: absolute;
     width: 1px;
 }
-
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
     clip: auto;

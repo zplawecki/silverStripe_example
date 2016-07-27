@@ -33,24 +33,25 @@ class ArticleHolder extends Page
     {
         $list = ArrayList::create();
         $stage = Versioned::current_stage();
-        $query_result = SQLSelect::create()
-            ->setSelect(array("DateString" => "DATE_FORMAT(`Date`,'%Y_%M_%m')"))
+        $query = new SQLQuery(array());
+        $query->selectField("DATE_FORMAT(`Date`,'%Y_%M_%m')", "DateString")
             ->setFrom("ArticlePage_{$stage}")
             ->setOrderBy("Date", "ASC")
-            ->setDistinct(true)
-            ->execute();
-        if ($query_result) {
-            while ($row = $query_result->next()) {
-                list($year, $monthName, $monthNumber) = explode('_', $row['DateString']);
+            ->setDistinct(true);
+        $result = $query->execute();
+
+        if ($result) {
+            while ($record = $result->nextRecord()) {
+                list($year, $monthName, $monthNumber) = explode('_', $record['DateString']);
                 $list->push(ArrayData::create(array(
                     'Year' => $year,
                     'MonthName' => $monthName,
                     'MonthNumber' => $monthNumber,
                     'Link' => $this->Link("date/$year/$monthNumber"),
                     'ArticleCount' => ArticlePage::get()->where("
-                        DATE_FORMAT(`Date`,'%Y%m') = '{$year}{$monthNumber}'
-                        AND ParentID = {$this->ID}
-                        ")->count()
+							DATE_FORMAT(`Date`,'%Y%m') = '{$year}{$monthNumber}'
+							AND ParentID = {$this->ID}
+						")->count()
                 )));
             }
         }

@@ -5,6 +5,7 @@
  *
  ** ------------------------------------------------------- */
 
+
 /* GENERIC FORMS
 ----------------------------------------------- */
 
@@ -12,17 +13,14 @@ form {
     max-width: 500px;
     width: 50%;
 }
-
 div.field {
     margin: 10px 0 15px;
 }
-
 fieldset {
     border: 0;
     margin: 0;
     padding: 0;
 }
-
 form label {
     margin-bottom: 5px;
 }
@@ -61,22 +59,21 @@ form .textajaxuniquetext:focus,
 form select:focus {
     outline: none;
 }
-
 form input[disabled], form textarea[disabled] {
     background-color: #f7f7f7;
     border: 1px solid #dad9d9;
 }
-
 textarea {
     resize: vertical; /* forces text area to be resized vertically only */
 }
+
 
 /* Radio and Checkbox */
 .field .checkbox, .field .radio {
     float: left;
     width: 13px;
     height: 13px;
-    margin-right: 6px;
+    margin-right: 6px; 
     margin-top: 3px;
     padding: 0;
 }
@@ -85,6 +82,7 @@ textarea {
 .radio label.right {
     float: left;
 }
+
 
 /* Messages */
 form .message {
@@ -99,18 +97,21 @@ form .good {
     border-color: #8fbe00;
 }
 
-form .bad, form .required {
+form .bad,
+form .required,
+form .error {
     background-color: #f9d0d0;
     border-color: #cf0000;
     color: #b80000;
 }
+
 
 /* ACTIONS */
 .Actions {
     margin-bottom: 20px;
 }
 
-a.btn, button, input[type="submit"], .Actions .action {
+a.btn, button, input[type="submit"], input[type="reset"], .Actions .action {
     background: #b80000;
     color: #fff;
     display: inline-block;
@@ -165,6 +166,7 @@ input.action[class] { /* IE ignores [class] */
     display: none;
 }
 
+
 /* AREA SPECIFIC */
 /* LOGIN and FORGOT PASSWORD */
 #Remember {
@@ -185,6 +187,9 @@ input.action[class] { /* IE ignores [class] */
     width: 100% !important; */
 }
 
+
+
+
 /* USER DEFINED USER FORM MODULE STYLES
 ----------------------------------------------- */
 
@@ -193,18 +198,15 @@ input.action[class] { /* IE ignores [class] */
     clear: both;
     padding-top: 15px;
 }
-
 form .date .middleColumn input {
     /*background: transparent url(../images/icons/your_icon_here.png) no-repeat scroll 90px 5px;*/
     width: 114px;
 }
-
 .Actions input.resetformaction,
 .Actions input.action-minor { /* Clear button */
     float: left;
     background-color: #888;
 }
-
 .Actions input.resetformaction:hover,
 .Actions input.action-minor:hover { /* Clear button */
     background-color: #aaa;
@@ -215,7 +217,6 @@ form .date .middleColumn input {
     font-size: 13px; /* reset to default */
     color: #333; /* reset to default */
 }
-
 form .requiredField label.left:after { /* pseudo element adds an asterisk to a required fields label */
     color: #B94A48;
     content: "*";
@@ -264,7 +265,7 @@ div.holder-required { /* This class needs to be changed - is used for both input
 }
 
 form input.holder-required { /* This class needs to be changed - is used for both input and div */
-    border: 1px solid #cf0000;
+    border: 1px solid #cf0000; 
 }
 
 /* Error messages */
@@ -275,7 +276,6 @@ textarea:invalid {
     -webkit-box-shadow: 0px 0px 5px red;
     box-shadow: 0px 0px 5px red;
 }
-
 .no-boxshadow input:invalid,
 .no-boxshadow textarea:invalid {
     background-color: #f0dddd
@@ -286,13 +286,11 @@ textarea:invalid {
     margin-top: 4px !important;
     float: left;
 }
-
 form .creditCardField input,
 form input.currency,
 form input.numeric {
     width: 50px;
 }
-
 form #DMYDate-month,
 form #DMYDate-day {
     width: 25px
@@ -301,7 +299,7 @@ form #DMYDate-day {
 /* Responsive form styles
 ----------------------------------------------- */
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 700px) { 
 
     /* To test - potentially not needed? */
     .header form .middleColumn {
@@ -315,12 +313,12 @@ form #DMYDate-day {
     }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 900px) { 
     form {
         max-width: 100%;
     }
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 700px) { 
 
 }
