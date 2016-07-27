@@ -11,5 +11,11 @@
   "config": {
     "process-timeout": 600
   },
-  "minimum-stability": "dev"
+  "minimum-stability": "dev",
+  "repositories": [
+    {
+      "url": "https://github.com/firegento/FireGento_FastSimpleImport2.git",
+      "type": "git"
+    }
+  ]
 }
